@@ -1,10 +1,11 @@
 {
     "name": "angular-echarts3",
+    "version": "0.0.1",
     "authors": [
         "尹现伟 <ios@yinxianwei.cn>"
     ],
-    "description": "baidu echarts3",
-    "main": "dist/angular-echarts3.js",
+    "description": "angular baidu echarts3",
+    "main": "./dist/angular-echarts3.js",
     "keywords": [
         "angular",
         "echarts",

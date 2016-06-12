@@ -1,5 +1,5 @@
 {
-    "name": "angularEcharts3",
+    "name": "angular-echarts3",
     "version": "1.0.0",
     "description": "baidu echarts3",
     "main": "gulpfile.js",

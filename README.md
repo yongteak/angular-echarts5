@@ -8,7 +8,7 @@ $ bower install angular-echarts3 --save
 ```
 
 ```
-<script src="../bower_components/echarts/dist//echarts.min.js"></script>
+<script src="../bower_components/echarts/dist/echarts.min.js"></script>
 <script src="../bower_components/angular-echarts3/dist/angular-echarts3.js"></script>
 ```
 

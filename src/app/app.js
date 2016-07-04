@@ -7,7 +7,7 @@ app.controller('MainCtrl', ['$scope', function($scope) {
     var vm = this;
     var type = false;
     vm.option = loadDataWithType(type);
-    
+
     $scope.change = function() {
         type = !type;
         vm.option = loadDataWithType(type);
@@ -17,20 +17,37 @@ app.controller('MainCtrl', ['$scope', function($scope) {
         if (type) {
             return {
                 title: {
-                    text: '测试'
+                    text: '堆叠区域图'
                 },
-                tooltip: {},
-                legend: {
-                    data: ['销量']
+                tooltip: {
+                    trigger: 'axis'
                 },
-                xAxis: {
-                    data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
                 },
-                yAxis: {},
+                xAxis: [{
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日', "12"]
+                }],
+                yAxis: [{
+                    type: 'value'
+                }],
                 series: [{
-                    name: '销量2',
-                    type: 'bar',
-                    data: [5, 20, 36, 10, 10, 20]
+                    name: '搜索引擎',
+                    type: 'line',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    areaStyle: { normal: {} },
+                    data: [820, 932, 901, 934, 1290, 1330, 1320, 333]
                 }]
             };
         }

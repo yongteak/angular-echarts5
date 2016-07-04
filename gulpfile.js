@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 var reload = browserSync.reload;
 
-gulp.task('build', function() {
+gulp.task('b', function() {
     gulp.src('./src/app/angular-echarts3.js')
         .pipe(gulp.dest('./dist'))
         .pipe(rename({suffix: '.min'}))
@@ -14,7 +14,7 @@ gulp.task('build', function() {
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('clean', function() {
+gulp.task('c', function() {
     del('./dist/*');
 });
 

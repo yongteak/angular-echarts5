@@ -3,7 +3,7 @@
 
     angular.module('angular-echarts3', []).directive('mwChart', mwChart);
 
-    function mwChart() {
+    function mwChart($window) {
         var directive = {
             restrict: 'E',
             require: 'ngModel',
@@ -17,7 +17,17 @@
         function mwChartLink(scope, el, attr, ngModel) {
             var ndWrapper = el[0];
             var echart = echarts.init(ndWrapper);
-            window.onresize = echart.resize;
+
+            scope.$watch(function() {
+                return $window.innerWidth;
+            }, function(value) {
+                echart.resize();
+            });
+            scope.$watch(function() {
+                return $window.innerHeight;
+            }, function(value) {
+                echart.resize();
+            });
 
             ngModel.$formatters.unshift(function(option) {
                 if (option) {

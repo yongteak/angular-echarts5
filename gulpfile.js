@@ -1,13 +1,22 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync'),
-    del = require('del');
+    del = require('del'),
+    rename = require('gulp-rename'),
+    uglify = require('gulp-uglify');
+
 var reload = browserSync.reload;
 
 gulp.task('build', function() {
     gulp.src('./src/app/angular-echarts3.js')
         .pipe(gulp.dest('./dist'))
-        .pipe(reload({ stream: true }));
-})
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('clean', function() {
+    del('./dist/*');
+});
 
 gulp.task('s', function() {
     browserSync.init({

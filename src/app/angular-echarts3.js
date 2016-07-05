@@ -33,6 +33,7 @@
                 if (option) {
                     echart.clear();
                     echart.setOption(option);
+                    echart.resize();
                 }
             });
         }

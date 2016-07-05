@@ -9,8 +9,12 @@ var reload = browserSync.reload;
 gulp.task('b', function() {
     gulp.src('./src/app/angular-echarts3.js')
         .pipe(gulp.dest('./dist'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify({
+            mangle: {
+                except: ['$window']
+            }
+        }))
         .pipe(gulp.dest('./dist'));
 });
 

@@ -27,7 +27,7 @@ gulp.task('s', function() {
         server: {
             baseDir: "./src",
             routes: {
-                "/echarts": "bower_components/echarts/dist/echarts.min.js",
+                "/echarts": "bower_components/echarts",
                 "/angular": "bower_components/angular/angular.min.js",
             }
         },

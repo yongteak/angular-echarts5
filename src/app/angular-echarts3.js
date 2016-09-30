@@ -20,13 +20,17 @@
 
             scope.$watch(function() {
                 return $window.innerWidth;
-            }, function(value) {
-                echart.resize();
+            }, function(newValue, oldValue) {
+                if (newValue != oldValue) {
+                    echart.resize();
+                }
             });
             scope.$watch(function() {
                 return $window.innerHeight;
-            }, function(value) {
-                echart.resize();
+            }, function(newValue, oldValue) {
+                if (newValue != oldValue) {
+                    echart.resize();
+                }
             });
 
             ngModel.$formatters.unshift(function(option) {

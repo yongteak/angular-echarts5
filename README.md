@@ -3,8 +3,16 @@
 
 ### Installation
 
+bower
+
 ```
 $ bower install angular-echarts3 --save
+```
+
+npm
+
+```
+$ npm install angular-echarts3 --save
 ```
 
 ```

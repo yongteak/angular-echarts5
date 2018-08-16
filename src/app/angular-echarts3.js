@@ -18,19 +18,11 @@
             var ndWrapper = el[0];
             var echart = echarts.init(ndWrapper);
 
-            scope.$watch(function() {
-                return $window.innerWidth;
-            }, function(newValue, oldValue) {
-                if (newValue != oldValue) {
-                    echart.resize();
-                }
+            angular.element(window).bind('resize', function() {
+                echart.resize();
             });
-            scope.$watch(function() {
-                return $window.innerHeight;
-            }, function(newValue, oldValue) {
-                if (newValue != oldValue) {
-                    echart.resize();
-                }
+            scope.$on('$destroy', function() {
+                angular.element(window).off('resize');
             });
 
             ngModel.$formatters.unshift(function(option) {

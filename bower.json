@@ -1,10 +1,10 @@
 {
-    "name": "angular-echarts3",
-    "version": "0.0.2",
+    "name": "angular-echarts5",
+    "version": "0.0.3",
     "authors": [
-        "尹现伟 <ios@yinxianwei.cn>"
+        "yongtaek <wordmeterdotnet@gmail.com>"
     ],
-    "description": "angular baidu echarts3",
+    "description": "angular baidu echarts5",
     "main": "./dist/angular-echarts3.js",
     "keywords": [
         "angular",
@@ -13,7 +13,7 @@
         "baidu"
     ],
     "license": "MIT",
-    "homepage": "https://github.com/yinxianwei/angular-echarts3",
+    "homepage": "https://github.com/yongteak/angular-echarts5",
     "ignore": [
         "**/.*",
         "node_modules",
@@ -22,7 +22,7 @@
         "tests"
     ],
     "dependencies": {
-        "angular": "~1.4.5",
-        "echarts": "^3.1.10"
+        "angular": "^1.8.2",
+        "echarts": "^5.0.0"
     }
 }

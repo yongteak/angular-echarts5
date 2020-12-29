@@ -25,10 +25,11 @@
                 angular.element(window).off('resize');
             });
 
-            ngModel.$formatters.unshift(function(option) {
-                if (option) {
+            ngModel.$formatters.unshift(function(param) {
+                if (param.option) {
                     echart.clear();
-                    echart.setOption(option);
+                    echart.setOption(param.option);
+                    echart.on('click',param.click)
                     echart.resize();
                 }
             });

@@ -26,7 +26,7 @@
             });
 
             ngModel.$formatters.unshift(function(param) {
-                if (param.option) {
+                if (param && param.hasOwnProperty('option')) {
                     echart.clear();
                     echart.setOption(param.option);
                     echart.on('click',param.click)

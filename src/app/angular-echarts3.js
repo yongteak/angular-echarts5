@@ -26,10 +26,12 @@
             });
 
             ngModel.$formatters.unshift(function(param) {
-                if (param && param.hasOwnProperty('option')) {
+                if (param) {
                     echart.clear();
-                    echart.setOption(param.option);
-                    echart.on('click',param.click)
+                    if (param.option)
+                        echart.setOption(param.option);
+                    if (param.click)
+                        echart.on('click',param.click);
                     echart.resize();
                 }
             });
